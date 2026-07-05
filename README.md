@@ -1,18 +1,3 @@
-## System Architecture
- 
-```
- IMU / Pressure / DVL / GPS ──► Sensor Acquisition + Error-State EKF ──┐
-                                                                        │
- Camera (30 FPS) ──► Enhancement ──► YOLOv8n Inference ──► Detections ─┼──► MQTT ──► Host Dashboard
-                                                                        │
-                                                                        └──► Alerts / Logging
-```
- 
-**AI pipeline**: Camera → Enhancement (~15–20 ms/frame) → YOLOv8n @ 320×320 (~25–35 ms/frame on Jetson Nano GPU) → NMS → Detection output
-**Throughput**: ~15–20 FPS end-to-end, ~50–70 ms latency (capture to detection)
- 
----
- 
 ## Repository Structure
  
 ```
