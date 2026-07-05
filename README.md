@@ -28,6 +28,7 @@ project/
 - **DVL**: 10 Hz bottom-lock velocity sensor (e.g. Teledyne/Nortek class)
 - **GPS**: surface-only fix
 - **Host computer**: any machine on the same network/tether running the MQTT broker + dashboard
+
 Jetson Nano was chosen over Raspberry Pi because the enhancement pipeline + YOLOv8n inference together need GPU parallelism to hit real-time frame rates; a Pi alone struggles past single-digit FPS under this same workload.
  
 ---
